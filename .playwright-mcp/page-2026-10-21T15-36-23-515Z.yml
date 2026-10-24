@@ -1,0 +1,22 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e3] [cursor=pointer]: TechShop
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5] [cursor=pointer]: Products
+      - generic [ref=f1e6] [cursor=pointer]:
+        - text: Cart
+        - generic [ref=f1e10]: "0"
+  - generic [ref=f1e12]:
+    - heading "Welcome back" [level=2] [ref=f1e13]
+    - paragraph [ref=f1e14]: Sign in to your TechShop account
+    - generic [ref=f1e15]:
+      - generic [ref=f1e16]: Username
+      - textbox "Username" [ref=f1e17]:
+        - /placeholder: Enter username
+    - generic [ref=f1e18]:
+      - generic [ref=f1e19]: Password
+      - textbox "Password" [ref=f1e20]:
+        - /placeholder: Enter password
+    - button "Sign In" [ref=f1e21] [cursor=pointer]
+    - button "Browse as Guest" [ref=f1e22] [cursor=pointer]
+    - paragraph [ref=f1e23]: "Demo credentials: demo@techshop.com (or admin) / password123"
