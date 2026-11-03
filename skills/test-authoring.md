@@ -9,6 +9,10 @@ Turn test cases into reliable, maintainable Playwright tests to a consistent sta
 
 ### 1. Locators
 - **User-Facing First:** Prioritize accessible, intent-revealing locators: `page.getByRole()`, `page.getByLabel()`, and `page.getByPlaceholder()`.
+- **Form Field Fallback Hierarchy:** When locating input fields:
+  1. Prefer `page.getByLabel()` when a `<label>` is properly associated with the input.
+  2. If the label is unassociated or missing, prefer `page.getByPlaceholder()` with visible placeholder text.
+  3. Never fall back to internal CSS IDs (e.g. `#co-firstname`) or implementation-detail classes when visible, user-facing placeholder text is present.
 - **No Brittle Chains:** Never use fragile CSS selectors, DOM hierarchies, or index chains (e.g., `div > div:nth-child(2) > span`, `table tr td:first-child`).
 - **Missing Locators:** If an element lacks accessible hooks or clean locators, recommend adding a stable accessible attribute or `data-testid` rather than writing fragile queries.
 
@@ -20,10 +24,11 @@ Turn test cases into reliable, maintainable Playwright tests to a consistent sta
 ### 3. Structure & Page Objects
 - **File Organization:** One `.spec.ts` file per feature area in `tests/` (e.g., `login.spec.ts`, `catalog.spec.ts`, `cart.spec.ts`, `checkout.spec.ts`).
 - **Lightweight Page Objects:** Use a clean, focused Page Object class per feature area (stored in `tests/pages/`) to encapsulate locators and core actions. Tests should read as user intent, not low-level DOM mechanics.
+- **Composite Flow Helpers:** Page Objects must encapsulate multi-step prerequisite flows and cross-view transitions (e.g., seeding a cart and proceeding to checkout) into reusable methods instead of requiring tests to execute multi-step navigation boilerplate.
 
-### 4. Fixtures
+### 4. Fixtures & Setup
 - **Shared Setup in Fixtures:** Common prerequisites (such as logging in or bootstrapping state) belong in a reusable Playwright test fixture (e.g., `tests/fixtures.ts` exporting an `authedPage` fixture).
-- **Zero Copy-Paste:** Never duplicate authentication or setup sequences across test blocks.
+- **Zero Copy-Paste:** Never duplicate authentication, state setup, or multi-step navigation sequences across test blocks. Encapsulate shared preconditions in Page Object helpers or setup hooks.
 
 ### 5. Isolation & Independence
 - **Strict Isolation:** Every test must be completely independent and runnable in any order, alone, or in parallel (`fullyParallel`).
@@ -44,7 +49,8 @@ Turn test cases into reliable, maintainable Playwright tests to a consistent sta
 1. **NO Manual Sleeps:** Never call `page.waitForTimeout()` or arbitrary delays. Rely on Playwright's built-in auto-waiting and web-first `expect` assertions.
 2. **NO Hardcoded Credentials:** Never write usernames, passwords, or tokens directly in test files or page objects.
 3. **NO Brittle Selectors:** Never use XPath, class name tag soup, or positional DOM selectors.
-4. **NO Static Ineffective Assertions:** Never assert on constants or static layout elements that provide zero validation value for the test's intent.
+4. **NO Raw Technical IDs When User-Facing Locators Exist:** Never use CSS `#id` selectors for form fields when visible user-facing placeholders or accessible labels are present.
+5. **NO Static Ineffective Assertions:** Never assert on constants or static layout elements that provide zero validation value for the test's intent.
 
 ---
 

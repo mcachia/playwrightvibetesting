@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3] [cursor=pointer]: TechShop
+    - generic [ref=e4]:
+      - generic [ref=e5] [cursor=pointer]: Products
+      - generic [ref=e6] [cursor=pointer]:
+        - text: Cart
+        - generic [ref=e10]: "0"
+  - generic [ref=e25]:
+    - generic [ref=e27]:
+      - heading "Our Products" [level=2] [ref=e28]
+      - paragraph [ref=e29]: Discover the latest tech gadgets at great prices
+    - generic [ref=e30]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: Wireless Headphones
+        - generic [ref=e36]: Premium over-ear headphones with active noise cancellation and 30-hour battery life.
+        - generic [ref=e37]:
+          - generic [ref=e38]: $89.99
+          - generic [ref=e39]: $88.19
+          - generic [ref=e40]: 20% OFF
+        - generic [ref=e41]:
+          - generic [ref=e42]: "Qty:"
+          - spinbutton [ref=e43]: "1"
+        - button "Add to Cart" [ref=e44] [cursor=pointer]
+      - generic [ref=e45]:
+        - img "USB-C Hub" [ref=e47]
+        - generic [ref=e48]:
+          - generic [ref=e49]: USB-C Hub 7-in-1
+          - generic [ref=e50]: Expand your laptop's connectivity with HDMI 4K, 3x USB-A, SD card reader, and 100W PD charging.
+          - generic [ref=e51]:
+            - generic [ref=e52]: $34.99
+            - generic [ref=e53]: $34.47
+            - generic [ref=e54]: 15% OFF
+          - generic [ref=e55]:
+            - generic [ref=e56]: "Qty:"
+            - spinbutton [ref=e57]: "1"
+          - button "Add to Cart" [ref=e58] [cursor=pointer]
+      - generic [ref=e59]:
+        - img "Mechanical Keyboard" [ref=e61]
+        - generic [ref=e62]:
+          - generic [ref=e63]: Mechanical Keyboard
+          - generic [ref=e64]: Compact TKL mechanical keyboard with Cherry MX Red switches, per-key RGB backlighting, aluminium top frame, and braided USB-C detachable cable — perfect for both gaming and professional typing on any desktop setup.
+          - generic [ref=e65]:
+            - generic [ref=e66]: $129.99
+            - generic [ref=e67]: $128.69
+            - generic [ref=e68]: 10% OFF
+          - generic [ref=e69]:
+            - generic [ref=e70]: "Qty:"
+            - spinbutton [ref=e71]: "1"
+          - button "Add to Cart" [ref=e72] [cursor=pointer]
+      - generic [ref=e73]:
+        - img "Webcam HD" [ref=e75]
+        - generic [ref=e76]:
+          - generic [ref=e77]: Webcam HD 1080p
+          - generic [ref=e78]: Crystal-clear 1080p webcam with built-in stereo microphone and auto-focus for video calls.
+          - generic [ref=e79]:
+            - generic [ref=e80]: $59.99
+            - generic [ref=e81]: $58.49
+            - generic [ref=e82]: 25% OFF
+          - generic [ref=e83]:
+            - generic [ref=e84]: "Qty:"
+            - spinbutton [ref=e85]: "1"
+          - button "Add to Cart" [ref=e86] [cursor=pointer]
