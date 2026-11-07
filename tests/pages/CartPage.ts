@@ -8,7 +8,7 @@ export class CartPage {
   constructor(readonly page: Page) {}
 
   // ── Global / Navigation Locators ───────────────────────────────────────────
-  readonly cartIcon: Locator = this.page.locator('.cart-icon');
+  readonly cartIcon: Locator = this.page.getByRole('navigation').locator('.cart-icon');
   readonly cartBadge: Locator = this.page.locator('#cart-count');
   readonly toast: Locator = this.page.locator('#toast');
 
@@ -20,11 +20,11 @@ export class CartPage {
   readonly cartHeading: Locator = this.page.getByRole('heading', { name: 'Shopping Cart' });
   readonly cartItems: Locator = this.page.locator('.cart-item');
   readonly cartSubtotal: Locator = this.page.locator('#cart-subtotal');
-  readonly cartShipping: Locator = this.page.locator('.cart-summary-panel').getByText('Shipping').locator('+ span');
+  readonly cartShipping: Locator = this.page.locator('.summary-row').filter({ hasText: 'Shipping' }).locator('span').last();
   readonly cartTotal: Locator = this.page.locator('#cart-total');
   readonly proceedToCheckoutButton: Locator = this.page.getByRole('button', { name: 'Proceed to Checkout' });
   readonly continueShoppingButton: Locator = this.page.getByRole('button', { name: 'Continue Shopping' });
-  readonly emptyCartMessage: Locator = this.page.locator('.cart-empty p');
+  readonly emptyCartMessage: Locator = this.page.getByText('Your cart is empty', { exact: false });
   readonly shopNowButton: Locator = this.page.getByRole('button', { name: 'Shop Now' });
 
   // ── Helpers & Action Locators ──────────────────────────────────────────────
@@ -102,4 +102,3 @@ export class CartPage {
     await item.getByRole('button', { name: 'Remove' }).click();
   }
 }
-

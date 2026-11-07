@@ -25,11 +25,12 @@ test.describe('Cart Feature', () => {
     await cartPage.addToCart('Wireless Headphones');
     await cartPage.openCart();
 
-    // 2. Verify order summary structure and shipping charge
+    // 2. Verify order summary structure and shipping charge with auto-retrying web-first checks
     await expect(cartPage.cartSubtotal).toBeVisible();
+    await expect(cartPage.cartSubtotal).toContainText('$');
     await expect(cartPage.cartTotal).toBeVisible();
 
-    // 3. Verify shipping is displayed as $4.99 for non-empty cart
+    // 3. Read subtotal once hydrated and verify shipping calculation
     const subtotalText = await cartPage.cartSubtotal.innerText();
     const subtotalValue = parseFloat(subtotalText.replace('$', ''));
     const expectedGrandTotal = `$${(subtotalValue + 4.99).toFixed(2)}`;
@@ -61,8 +62,13 @@ test.describe('Cart Feature', () => {
     // Cart badge should reflect updated total quantity
     await expect(cartPage.cartBadge).toHaveText('3');
 
+    // Ensure unit price is hydrated before calculation
+    const unitPriceLocator = cartPage.getItemUnitPrice('Wireless Headphones');
+    await expect(unitPriceLocator).toBeVisible();
+    await expect(unitPriceLocator).toContainText('$');
+
     // Line subtotal and order totals must recalculate dynamically (fails if totals remain frozen)
-    const unitPriceText = await cartPage.getItemUnitPrice('Wireless Headphones').innerText();
+    const unitPriceText = await unitPriceLocator.innerText();
     const unitPrice = parseFloat(unitPriceText.replace('$', '').replace(' each', ''));
     const expectedSubtotal = `$${(unitPrice * 3).toFixed(2)}`;
     const expectedTotal = `$${(unitPrice * 3 + 4.99).toFixed(2)}`;
@@ -89,4 +95,3 @@ test.describe('Cart Feature', () => {
     await expect(cartPage.cartBadge).toHaveText('1');
   });
 });
-

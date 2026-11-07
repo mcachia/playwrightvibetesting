@@ -1,4 +1,4 @@
-import { test as base, Page } from '@playwright/test';
+import { test as base, Page, expect } from '@playwright/test';
 import { LoginPage } from './pages/LoginPage';
 import { CartPage } from './pages/CartPage';
 import { CheckoutPage } from './pages/CheckoutPage';
@@ -21,6 +21,7 @@ type Fixtures = {
 /**
  * Custom Playwright test fixture providing:
  * - `authedPage` / `authenticatedPage`: An isolated Playwright Page already logged into TechShop.
+ *   Guarantees that the session is authenticated and catalog view is settled before yielding.
  * - `loginPage`: A lightweight LoginPage page object initialized and navigated to the login screen.
  * - `cartPage`: A lightweight CartPage page object backed by the authenticated page.
  * - `checkoutPage`: A lightweight CheckoutPage page object backed by the authenticated page.
@@ -46,6 +47,9 @@ export const test = base.extend<Fixtures>({
     const loginPage = new LoginPage(page);
     await loginPage.goto();
     await loginPage.login(email, password);
+
+    // Flakiness prevention: Ensure authenticated catalog view is settled before tests run
+    await expect(loginPage.productsHeading).toBeVisible();
 
     // Provide the authenticated page to the test
     await use(page);

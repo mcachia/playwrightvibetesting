@@ -15,7 +15,7 @@ export class LoginPage {
   readonly welcomeHeading: Locator = this.page.getByRole('heading', { name: 'Welcome back' });
   readonly productsHeading: Locator = this.page.getByRole('heading', { name: 'Our Products' });
   readonly errorMessage: Locator = this.page.locator('#toast');
-  readonly navProductsLink: Locator = this.page.locator('.navbar').getByText('Products');
+  readonly navProductsLink: Locator = this.page.getByRole('navigation').getByText('Products');
 
   /**
    * Navigate to the login page (base URL).
