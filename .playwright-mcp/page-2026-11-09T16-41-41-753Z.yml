@@ -1,0 +1,9 @@
+- generic [active] [ref=f4e1]:
+  - navigation [ref=f4e2]:
+    - generic [ref=f4e3] [cursor=pointer]: BookNow
+    - generic [ref=f4e4]: Rooms
+  - generic [ref=f4e122]:
+    - generic [ref=f4e123]: ✓
+    - heading "Booking Confirmed!" [level=2] [ref=f4e124]
+    - paragraph [ref=f4e125]: Your reservation has been placed. Check your email for details.
+    - button "Browse More Rooms" [ref=f4e126] [cursor=pointer]

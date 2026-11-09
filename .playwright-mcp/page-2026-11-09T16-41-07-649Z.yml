@@ -1,0 +1,49 @@
+- generic [active] [ref=f4e1]:
+  - navigation [ref=f4e2]:
+    - generic [ref=f4e3] [cursor=pointer]: BookNow
+    - generic [ref=f4e4]: Rooms
+  - generic [ref=f4e73]:
+    - heading "Complete Your Booking" [level=2] [ref=f4e75]
+    - generic [ref=f4e76]:
+      - generic [ref=f4e77]:
+        - heading "Guest Details" [level=3] [ref=f4e78]
+        - generic [ref=f4e79]:
+          - generic [ref=f4e80]:
+            - generic [ref=f4e81]: First Name
+            - textbox "John" [ref=f4e82]
+          - generic [ref=f4e83]:
+            - generic [ref=f4e84]: Last Name
+            - textbox "Smith" [ref=f4e85]
+        - generic [ref=f4e86]:
+          - generic [ref=f4e87]: Email Address
+          - textbox "john@example.com" [ref=f4e88]
+        - generic [ref=f4e89]:
+          - generic [ref=f4e90]: Phone Number
+          - textbox "+1 234 567 8900" [ref=f4e91]
+        - separator [ref=f4e92]
+        - heading "Stay Details" [level=3] [ref=f4e93]
+        - generic [ref=f4e94]:
+          - generic [ref=f4e95]:
+            - generic [ref=f4e96]: Check-in Date
+            - textbox [ref=f4e97]
+          - generic [ref=f4e98]:
+            - generic [ref=f4e99]: Check-out Date
+            - textbox [ref=f4e100]
+        - generic [ref=f4e101]:
+          - generic [ref=f4e102]: Number of Guests
+          - spinbutton [ref=f4e103]: "1"
+        - button "Book Now" [ref=f4e104] [cursor=pointer]
+      - generic [ref=f4e106]:
+        - heading "Booking Summary" [level=3] [ref=f4e107]
+        - generic [ref=f4e108]: Deluxe Room
+        - separator [ref=f4e109]
+        - generic [ref=f4e110]:
+          - generic [ref=f4e111]: Price per night
+          - generic [ref=f4e112]: $126.42
+        - generic [ref=f4e113]:
+          - generic [ref=f4e114]: Nights
+          - generic [ref=f4e115]: "1"
+        - generic [ref=f4e116]:
+          - generic [ref=f4e117]: Estimated Total
+          - generic [ref=f4e118]: $126.42
+        - paragraph [ref=f4e119]: Select dates above to calculate total

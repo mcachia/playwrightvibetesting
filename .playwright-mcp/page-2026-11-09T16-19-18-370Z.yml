@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3] [cursor=pointer]: BookNow
+    - generic [ref=e4]: Rooms
+  - generic [ref=e7]:
+    - heading "Welcome Back" [level=2] [ref=e8]
+    - paragraph [ref=e9]: Sign in to book your perfect stay
+    - generic [ref=e10]:
+      - generic [ref=e11]: Email Address
+      - textbox "Email Address" [ref=e12]:
+        - /placeholder: guest@booknow.com
+    - generic [ref=e13]:
+      - generic [ref=e14]: Password
+      - textbox "Password" [ref=e15]:
+        - /placeholder: Enter your password
+    - button "Sign In" [ref=e16] [cursor=pointer]
+    - paragraph [ref=e17]: "Demo credentials: guest@booknow.com / stay2026"

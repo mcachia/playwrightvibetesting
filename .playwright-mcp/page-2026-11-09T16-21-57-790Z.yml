@@ -1,0 +1,53 @@
+- generic [active] [ref=f3e1]:
+  - navigation [ref=f3e2]:
+    - generic [ref=f3e3] [cursor=pointer]: BookNow
+    - generic [ref=f3e4]: Rooms
+  - generic [ref=f3e19]:
+    - generic [ref=f3e21]:
+      - heading "Available Rooms" [level=2] [ref=f3e22]
+      - paragraph [ref=f3e23]: Choose from our selection of rooms and suites
+    - generic [ref=f3e24]:
+      - generic [ref=f3e25]:
+        - generic [ref=f3e26]: Available
+        - generic [ref=f3e29]:
+          - generic [ref=f3e30]: Deluxe Room
+          - generic [ref=f3e31]: Comfortable room with king-size bed, city view, and complimentary breakfast included.
+          - generic [ref=f3e32]:
+            - generic [ref=f3e33]: $129/night
+            - generic [ref=f3e34]: $126.42/night
+            - generic [ref=f3e35]: 20% OFF
+          - button "Select Room" [ref=f3e36] [cursor=pointer]
+      - generic [ref=f3e37]:
+        - generic [ref=f3e38]:
+          - img "Superior Room" [ref=f3e39]
+          - generic [ref=f3e40]: Available
+        - generic [ref=f3e41]:
+          - generic [ref=f3e42]: Superior Room
+          - generic [ref=f3e43]: Spacious room with twin beds, garden view, and access to the rooftop pool.
+          - generic [ref=f3e44]:
+            - generic [ref=f3e45]: $89/night
+            - generic [ref=f3e46]: $88.11/night
+            - generic [ref=f3e47]: 10% OFF
+          - button "Select Room" [ref=f3e48] [cursor=pointer]
+      - generic [ref=f3e49]:
+        - generic [ref=f3e50]: Available
+        - generic [ref=f3e52]:
+          - generic [ref=f3e53]: Family Suite
+          - generic [ref=f3e54]: Generous family suite with two bedrooms, a spacious living area, kitchenette, premium entertainment system, complimentary breakfast for four guests, and stunning panoramic ocean views — the perfect choice for families travelling with children of any age.
+          - generic [ref=f3e55]:
+            - generic [ref=f3e56]: $199/night
+            - generic [ref=f3e57]: $196.01/night
+            - generic [ref=f3e58]: 15% OFF
+          - button "Select Room" [ref=f3e59] [cursor=pointer]
+      - generic [ref=f3e60]:
+        - generic [ref=f3e61]:
+          - img "Penthouse Suite" [ref=f3e62]
+          - generic [ref=f3e63]: Available
+        - generic [ref=f3e64]:
+          - generic [ref=f3e65]: Penthouse Suite
+          - generic [ref=f3e66]: Exclusive top-floor suite with private terrace, butler service, and panoramic skyline views.
+          - generic [ref=f3e67]:
+            - generic [ref=f3e68]: $299/night
+            - generic [ref=f3e69]: $297.50/night
+            - generic [ref=f3e70]: 5% OFF
+          - button "Select Room" [ref=f3e71] [cursor=pointer]
